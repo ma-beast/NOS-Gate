@@ -1,0 +1,18 @@
+NOS-Gate 0.3.18.4 IMG EXPLICIT SIZE
+
+База: 0.3.18.2b. Это изолированный ШАГ 1; эксперимент LEGACY-LAYOUT 0.3.18.3
+сюда не переносился.
+
+Фикс действует в LITE и SUPERLITE:
+- если IMG уже содержит оба явных числовых атрибута width и height,
+  NOS-Gate добавляет те же размеры как inline CSS width:Npx;height:Npx;
+- это даёт явным HTML-размерам приоритет над внешним responsive CSS
+  вроде width:100% / height:auto;
+- реальные файлы для такого IMG не скачиваются и не анализируются;
+- картинки без явной пары width+height этим новым правилом не затрагиваются.
+
+Полные LITE-LAYOUT-DIAG и IMAGE-GEOMETRY от 0.3.18.2b сохранены.
+Добавлен лог IMG-SIZE-FIX.
+
+Специальных правил для 4PDA или имён CSS-классов нет.
+Cookies, redirects, WebP rescue, Media Core/HLS и плееры не менялись.

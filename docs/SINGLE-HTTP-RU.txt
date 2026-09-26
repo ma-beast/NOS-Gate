@@ -1,0 +1,20 @@
+NOS-Gate 0.3.18.6 SINGLE HTTP
+
+База: 0.3.18.5 WORKER LIMIT 2.
+
+Первый обратимый шаг новой архитектуры:
+- обычные HTTP-запросы NOS-Gate: максимум 1 одновременно работающий worker;
+- существующий semaphore оставлен, его лимит теперь 1;
+- серверный цикл пока не переписывался, чтобы тест был маленьким и обратимым.
+
+Не менялись:
+HLS/media, WebP rescue, cookies, redirects, ORIGINAL/LITE/SUPERLITE,
+IMG explicit-size fix и накопленная диагностика.
+
+Лог:
+[WORKER-LIMIT] global HTTP workers=1 (single-thread test)
+WORKER-START active= не должен превышать 1.
+
+Главный тест: YummyAnime в ORIGINAL, LITE и SUPERLITE.
+Если падение исчезнет, следующим отдельным шагом можно окончательно
+упростить обычный HTTP-тракт, а медиатракт позже вынести в NOS-Player.

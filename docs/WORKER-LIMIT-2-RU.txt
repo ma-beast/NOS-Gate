@@ -1,0 +1,20 @@
+NOS-Gate 0.3.18.5 WORKER LIMIT 2
+
+Ѕаза: 0.3.18.4 IMG EXPLICIT SIZE.
+
+»зменение только одно по поведению:
+- существующий глобальный semaphore NOS-Gate теперь допускает максимум
+  2 одновременно работающих обычных HTTP worker вместо прежних 8.
+
+¬ажно:
+- HLS video+audio логика не измен€лась;
+- WebP rescue не измен€лс€;
+- cookies не измен€лись;
+- redirect logic не измен€лась;
+- фикс IMG explicit size из 0.3.18.4 сохранЄн;
+- диагностика сохранена.
+
+¬ лог при старте добавлена строка:
+[WORKER-LIMIT] global HTTP workers=2
+
+¬ WORKER-START значение active теперь не должно превышать 2.

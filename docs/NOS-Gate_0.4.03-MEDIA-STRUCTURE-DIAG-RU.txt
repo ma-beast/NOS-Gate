@@ -1,0 +1,25 @@
+NOS-Gate 0.4.03 MEDIA STRUCTURE DIAG
+
+База: 0.4.02 MEDIA DETECT DIAG VC6FIX, которая основана на рабочей
+0.4.01 8-WORKER GUARDED TEST FIXED.
+
+Добавлен второй, пассивный уровень медиадетектора.
+Он НЕ меняет страницу, НЕ открывает дополнительные URL и НЕ запускает плеер.
+
+Новые строки лога [MEDIA-STRUCT]:
+- PLAYER-SLOT — объявленный страницей блок плеера;
+- PLAYER — альтернативный основной плеер;
+- TRAILER — явно отделённый трейлер;
+- IFRAME-UNKNOWN — iframe без достаточных признаков;
+- summary — число slots / players / trailers / unknown-iframes.
+
+Для YummyAnime учитываются сильные общие признаки data-params,
+action=iframe и *-player. Для готовых iframe используются структурные
+признаки player/xfplayer и явная семантика URL movie/vod/embed.
+Trailer отделяется отдельно.
+
+Это диагностический слой: выбор озвучки/сезона/серии/качества пока
+не разбирается. 8 workers, cookies/referer guards, LITE/SUPERLITE,
+карточки и отображение страниц не менялись.
+
+Старые описания находятся в docs/.

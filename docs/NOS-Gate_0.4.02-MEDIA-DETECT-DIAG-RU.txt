@@ -1,0 +1,16 @@
+NOS-Gate 0.4.02 MEDIA DETECT DIAG
+База: рабочая 0.4.01 8-WORKER GUARDED TEST FIXED.
+
+Добавлен пассивный диагностический детектор медиа для LITE/SUPERLITE.
+Он ничего дополнительно не скачивает, HTML не меняет, плеер не запускает.
+
+Классы: DIRECT, IFRAME, DYNAMIC.
+Ищутся VIDEO/AUDIO/SOURCE, IFRAME, пустые media/player DIV,
+подозрительные внешние player/video/embed/replace SCRIPT,
+сигнатуры m3u8/mpd/mp4/webm/m4a/mp3 и известные embed-семейства.
+
+Смотреть строки [MEDIA-DETECT] в логе.
+Вся рабочая логика 0.4.01, включая 8 workers и карточки, сохранена.
+Старые описания находятся в docs/.
+
+VC6 FIX: устранена зависимость нового MEDIA-DETECT от объявленной ниже find_ci(); функциональная логика детектора не менялась.

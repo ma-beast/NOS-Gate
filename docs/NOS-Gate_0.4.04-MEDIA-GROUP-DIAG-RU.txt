@@ -1,0 +1,24 @@
+NOS-Gate 0.4.04 MEDIA GROUP DIAG
+
+База: 0.4.03 MEDIA STRUCTURE DIAG.
+Рабочая многопоточная база 0.4.01 (8 WORKER GUARDED TEST FIXED) сохранена.
+
+Мини-доводка пассивного медиадетектора:
+- декоративные player-controls / video-responsive больше не считаются
+  самостоятельными PLAYER-SLOT;
+- верхний контейнер пишется как MEDIA-BLOCK;
+- iframe внутри trl2/trailer наследует контекст родителя и считается TRAILER;
+- реальные альтернативные источники остаются отдельными PLAYER;
+- IFRAME-UNKNOWN сохраняется для сомнительных iframe;
+- итог: blocks / players / trailers / unknown-iframes.
+
+Ожидаемая проверка:
+YummyAnime: один медиаблок, два основных PLAYER (Alloha/Kodik),
+отдельный TRAILER YouTube.
+GidOnline: один медиаблок, несколько альтернативных PLAYER.
+
+Это по-прежнему ТОЛЬКО диагностика:
+HTML/отображение, воспроизведение, сеть и 8-worker схема не менялись.
+Мини-фикс переключения LITE/SUPERLITE сюда намеренно не добавлен.
+
+Старые описания находятся в docs/.

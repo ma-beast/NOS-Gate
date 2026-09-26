@@ -1,0 +1,15 @@
+NOS-Gate 0.3.16 YOUTUBE WATCH TEST
+
+База: чистая NOS-Gate 0.3.12 PARALLEL DUAL HLS.
+
+Изменено только обслуживание локальных HTTP-клиентов:
+- максимум одновременных worker: 2 -> 8;
+- добавлены WORKER-START / WORKER-END с thread, active и socket;
+- завершение ожидает освобождения всех 8 worker slots.
+
+HLS, BearSSL, relay, выбор источников, MPlayer/VLC и логика media НЕ менялись.
+DIRECT-HLS эксперименты сюда НЕ включены.
+
+Тестировать прежде всего VIDEO+AUDIO 360p и 720p в MPlayer.
+После теста прислать nos-gate.log и nos-gate-player.log.
+Особенно интересен максимальный active=... во время воспроизведения.

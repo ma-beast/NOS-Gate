@@ -1,0 +1,40 @@
+NOS-Gate 0.5.1 Final
+
+Финальная база этого этапа: NOS-Gate 0.5.00 URL MODE SWITCH.
+
+Изменения только финализационные:
+
+1. mplayer.exe больше НЕ требуется в папке NOS-Gate.
+   Видеоконтроль сначала ищет:
+     C:\Program Files\NOS-Pipe\mplayer.exe
+   Также поддерживается переносная схема соседних папок:
+     ...\NOS-Gate\NOS-Gate.exe
+     ...\NOS-Pipe\mplayer.exe
+
+2. YouTube iframe/embed.
+   Из youtube.com/embed/VIDEO_ID (а также обычных YouTube URL, если они
+   попали в Media Bar) извлекается VIDEO_ID. Вместо открытия YouTube web-player
+   Gate передаёт этот код NOS-Pipe как строку поиска:
+     javaw -cp NOS-Pipe.jar notpipe.gui.NOSPipeGui "VIDEO_ID"
+   NOS-Pipe ищется в C:\Program Files\NOS-Pipe\NOS-Pipe.jar либо в соседней
+   переносной папке NOS-Pipe.
+
+3. Логирование полностью выключено в релизе.
+   Код логирования НЕ удалён: open_log() и log_line() сохранены в исходнике,
+   но сейчас являются no-op. nos-gate.log создаваться/дописываться не должен.
+
+4. Media Core, Generic IFRAME, 8 guarded workers, LITE/SUPERLITE,
+   карточки и исправленный URL-переключатель 0.5.00 не менялись.
+
+Web-player research отдельно зафиксирован в архиве
+NOS-Gate_WEB-PLAYERS-PARKED_2026-09-24.zip.
+
+5. YouTube watch URL:
+   youtube.com/watch/VIDEO_ID теперь обрабатывается так же, как /embed/VIDEO_ID:
+   VIDEO_ID передаётся NOS-Pipe как строка поиска.
+
+6. YouTube top-level watch page fix:
+   Если в NOS-Gate открывается youtube.com/watch?v=VIDEO_ID,
+   youtube.com/watch/VIDEO_ID, /embed/VIDEO_ID или youtu.be/VIDEO_ID,
+   Gate больше не показывает свою старую страницу direct 360p MP4.
+   VIDEO_ID сразу передаётся NOS-Pipe как поисковая строка.

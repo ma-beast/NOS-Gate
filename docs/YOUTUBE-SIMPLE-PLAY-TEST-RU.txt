@@ -1,0 +1,22 @@
+NOS-Gate 0.3.17 YOUTUBE SIMPLE PLAY TEST
+
+Ѕаза: проверенна€ 0.3.16 YOUTUBE WATCH TEST.
+
+ƒобавлено только простейшее воспроизведение YouTube:
+- из уже загруженной watch-страницы ищетс€ direct progressive MP4 itag 18;
+- это muxed 360p: видео + звук в одном MP4;
+- при наличии пр€мого URL по€вл€етс€ Play 360p MP4;
+- запуск идЄт через существующий Media Core NOS-Gate и локальный MPlayer;
+- DASH, signatureCipher и отдельный resolver пока не добавлены.
+
+≈сли YouTube не прислал пр€мой itag 18, кнопки нет и выводитс€ сообщение.
+¬ nos-gate.log по€вл€етс€ строка YOUTUBE-PLAY с точной причиной.
+
+—охранены без изменений:
+- SUPERLITE search;
+- облегчЄнна€ watch-страница и рекомендации;
+- SAVE;
+- 8-worker HLS;
+- OFF fix;
+- локальный MPlayer;
+- посто€нна€ иконка.

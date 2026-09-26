@@ -1,0 +1,21 @@
+NOS-Gate 0.3.18.2b LITE IMAGE GEOMETRY DIAG
+
+База: 0.3.18.1 LITE LAYOUT DIAG.
+Полная диагностика 0.3.18.1 сохранена.
+
+Только в LITE:
+- для JPG/JPEG/PNG/GIF без width/height/class/id/style шлюз проверяет
+  реальный файл и читает его собственные размеры из JPEG/PNG/GIF;
+- при успехе дописывает width и height в IMG;
+- максимум 8 дополнительных проверок изображений на страницу.
+
+Логи:
+LITE-LAYOUT-DIAG — прежний полный лог без сокращений;
+IMAGE-GEOMETRY — каждая проверка и итог fixed/skipped/probes.
+
+Спецправил для 4PDA нет.
+Остальные механизмы 0.3.18.1 не менялись.
+
+Стартовая: исправлен YummyAnime на yummyanime.tv; добавлены worldofspectrum.org и worldofspectrum.net.
+
+0.3.18.2b: исправлена область видимости forced_img_w/forced_img_h для VC6.

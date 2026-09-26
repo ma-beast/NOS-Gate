@@ -1,0 +1,25 @@
+NOS-Gate 0.3.18.1 LITE LAYOUT DIAG
+
+База: загруженный NOS-Gate 0.3.18 LITE FINAL.
+
+Это ТОЛЬКО диагностика. Разметка LITE не изменяется.
+
+В LITE для IMG без явной пары width+height в nos-gate.log пишется:
+LITE-LAYOUT-DIAG
+- width / height;
+- src (по возможности абсолютный URL);
+- class / id / inline style;
+- ближайший предыдущий HTML-тег как структурная подсказка.
+
+В конце:
+missing-size IMG candidates=N; diagnostic only, HTML unchanged
+
+Не добавлены SAFE-LAYOUT, unwrap, CSS guard или фильтры рекламы.
+Cookies, redirects, WebP, SUPERLITE, Media Core и плееры не менялись.
+
+Для теста:
+1. открыть стартовую 4PDA в LITE;
+2. дождаться полной загрузки;
+3. открыть форум 4PDA в LITE;
+4. прислать nos-gate.log.
+SAVE пока не обязателен: нужная структура пишется в отдельные строки лога.

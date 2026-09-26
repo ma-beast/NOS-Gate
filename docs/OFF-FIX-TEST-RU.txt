@@ -1,0 +1,22 @@
+NOS-Gate 0.3.16 YOUTUBE WATCH TEST
+
+База: рабочая 0.3.13 MULTIWORKER HLS TEST (8 workers).
+
+Исправление OFF:
+accept() главного потока был блокирующим. /quit выставлял gate_running=0,
+но главный поток уже сидел внутри accept() и не проверял флаг до нового
+подключения. Теперь /quit закрывает listening socket, будит accept(),
+после чего NOS-Gate штатно ждёт завершения workers и выходит.
+
+Также MPlayer ищется только рядом с NOS-Gate.exe.
+Системный путь NOS-Pipe для MPlayer удалён.
+VLC/MPC fallback оставлены как были.
+
+Проверка:
+1. Запустить NOS-Gate.
+2. Нажать OFF.
+3. NOS-Gate.exe должен исчезнуть из диспетчера задач без второго запуска.
+4. В nos-gate.log должна появиться строка STOP NOS-Gate closed.
+5. Отдельно проверить 360p VIDEO+AUDIO, чтобы убедиться, что 8-worker baseline не затронут.
+
+Постоянная иконка NOS-Gate_WinME_XP добавлена в src\win32\NOS-Gate.ico и привязана к EXE через NOS-Gate.rc.
